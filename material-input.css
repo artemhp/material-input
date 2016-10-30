@@ -1,5 +1,5 @@
 .material-form-group {
-    margin-top: 25px;
+    margin-top: 15px;
     position: relative;
 }
 
@@ -7,9 +7,9 @@
     color: transparent;
 }
 
-.material-form-group input:placeholder-shown + label{
+.material-form-group input:placeholder-shown + label {
     top: 50%;
-    transform: scale(1, 1)  translateY(-50%);
+    transform: scale(1, 1) translateY(-50%);
     color: inherit;
     background: transparent;
     opacity: 0.5;
@@ -23,7 +23,18 @@
     transform-origin: 0 150%;
     margin-left: 12px;
     color: #439ADC;
-    transition: 0.314s;
+    transition: 0.214s;
     background: #fff;
     opacity: 1;
+}
+
+.material-form-group label {
+    color: rgba(0, 0, 0, .35);
+    opacity: 1;
+}
+
+.material-form-group input:invalid + label:after {
+    color: red;
+    content: "(invalid)";
+    margin-left: 0.5rem;
 }

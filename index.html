@@ -9,21 +9,67 @@
             integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="material-input.css">
+    <style>
+        section {
+            margin: 1em;
+        }
+        ol {
+            /*padding-top: 1em;*/
+            /*padding-bottom: 1em;*/
+        }
+    </style>
 </head>
 <body>
-<form action="">
-    <div class="form-group material-form-group">
-        <input type="email" placeholder="M" class="form-control" id="example1">
-        <label for="example1">Input Field</label>
-    </div>
-    <div class="form-group material-form-group">
-        <input type="email" placeholder="M" type="number" class="form-control" id="example2">
-        <label for="example2">Validation Field (input not number)</label>
-    </div>
-    <div class="form-group material-form-group">
-        <input type="email" placeholder="M" class="form-control" id="example3">
-        <label for="example3">Email address</label>
-    </div>
-</form>
+<div class="container">
+    <section style="">
+        <h1 class="display-4">Placeholder-rise on input field</h1>
+        <form action="">
+            <label class="form-group material-form-group">
+                <input type="email" placeholder="M" class="form-control" id="example1">
+                <label for="example1">Regular input field</label>
+            </label>
+            <div class="form-group material-form-group">
+                <input value="abc DE fg" placeholder="M" class="form-control" id="example2">
+                <label for="example2">Pre populated field</label>
+            </div>
+            <h4>Validation example</h4>
+            <div class="form-group material-form-group">
+                <input type="email" value="artemhp@" placeholder="M" class="form-control" id="example3">
+                <label for="example3">Email address</label>
+            </div>
+        </form>
+    </section>
+    <section>
+        <h1 class="display-4">Usage with Bootstrap 4</h1>
+        <div class="">
+            <ol style="">
+                <li>Just add class <kbd>material-form-group</kbd> to <strong>.form-group</strong> or nearest container.</li>
+                <li><kbd>label</kbd> tag should be after <kbd>input</kbd>.</li>
+                <li><kbd>placeholder</kbd> in <strong>input</strong> should not be empty but can consist anything.</li>
+            </ol>
+        </div>
+        <div>
+            <pre>
+                <code>
+&ltdiv class="form-group <strong>material-form-group</strong>">
+    &ltinput type="email" placeholder="M" class="form-control" id="example3">
+    &ltlabel for="example3">Email address&lt/label>
+&lt/div>
+                </code>
+            </pre>
+        </div>
+        <h4>With wrapped label (no id):</h4>
+        <div>
+            <pre>
+                <code>
+&ltlabel class="form-group material-form-group">
+    &ltinput type="email" placeholder="M" class="form-control">
+    &ltlabel>Email address&lt/label>
+&lt/label>
+                </code>
+            </pre>
+        </div>
+    </section>
+</div>
 </body>
 </html>
