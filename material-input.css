@@ -1,0 +1,29 @@
+.material-form-group {
+    margin-top: 25px;
+    position: relative;
+}
+
+.material-form-group input::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.material-form-group input:placeholder-shown + label{
+    top: 50%;
+    transform: scale(1, 1)  translateY(-50%);
+    color: inherit;
+    background: transparent;
+    opacity: 0.5;
+}
+
+.material-form-group input:focus + label,
+.material-form-group label {
+    position: absolute;
+    top: -100%;
+    transform: scale(0.8, 0.8) translateY(100%);
+    transform-origin: 0 150%;
+    margin-left: 12px;
+    color: #439ADC;
+    transition: 0.314s;
+    background: #fff;
+    opacity: 1;
+}
