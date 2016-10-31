@@ -1,40 +1,48 @@
+/* Additional indent for form-group because label will move up */
 .material-form-group {
     margin-top: 15px;
     position: relative;
 }
 
+/* Move placeholder up on focus and by default (when it is not empty) */
+/* .material-form-group input:placeholder-shown + label ---- will overwrite it when empty */
+
+.material-form-group label {
+    position: absolute;
+    transform-origin: 0 150%;
+    margin-left: 12px;
+    transition: 0.314s;
+    -webkit-user-select: none;
+    user-select: none;
+    color: rgba(0, 0, 0, 0.314);
+}
+
+/* The only way to handle if input field is not empty - detect by :placeholder-shown :(( */
+.material-form-group input:placeholder-shown + label {
+    top: 50%;
+    transform: scale(1, 1) translateY(-50%);
+    background: transparent;
+}
+
+/* Remove placeholders text. Placeholder should not be empty. */
 .material-form-group input::-webkit-input-placeholder {
     color: transparent;
 }
 
-.material-form-group input:placeholder-shown + label {
-    top: 50%;
-    transform: scale(1, 1) translateY(-50%);
-    color: inherit;
-    background: transparent;
-    opacity: 0.5;
+.material-form-group input:focus + label {
+    color: #439ADC;
 }
 
 .material-form-group input:focus + label,
 .material-form-group label {
-    position: absolute;
     top: -100%;
     transform: scale(0.8, 0.8) translateY(100%);
-    transform-origin: 0 150%;
-    margin-left: 12px;
-    color: #439ADC;
-    transition: 0.214s;
     background: #fff;
-    opacity: 1;
 }
 
-.material-form-group label {
-    color: rgba(0, 0, 0, .35);
-    opacity: 1;
-}
-
+/* Validation Failed */
 .material-form-group input:invalid + label:after {
     color: red;
     content: "(invalid)";
-    margin-left: 0.5rem;
+    margin-left: 0.314rem;
 }
