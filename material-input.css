@@ -29,12 +29,9 @@
     color: transparent;
 }
 
-.material-form-group input:focus + label {
-    color: #439ADC;
-}
-
 .material-form-group input:focus + label,
 .material-form-group label {
+    color: #439ADC;
     top: -100%;
     transform: scale(0.8, 0.8) translateY(100%);
     background: #fff;
