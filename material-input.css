@@ -1,6 +1,14 @@
 /* Additional indent for form-group because label will move up */
+:root {
+    --mi-animation-speed: 0.314s;
+    --mi-label-focus-color: #439ADC;
+    --mi-label-default-color: rgba(0, 0, 0, 0.314);
+    --mi-indent-top: 15px;
+    --mi-indent-left:12px;
+}
+
 .material-form-group {
-    margin-top: 15px;
+    margin-top: var(--mi-indent-top);
     position: relative;
 }
 
@@ -10,11 +18,11 @@
 .material-form-group label {
     position: absolute;
     transform-origin: 0 150%;
-    margin-left: 12px;
-    transition: 0.314s;
+    margin-left: var(--mi-indent-left);
+    transition: var(--mi-animation-speed);
     -webkit-user-select: none;
     user-select: none;
-    color: rgba(0, 0, 0, 0.314);
+    color: var(--mi-label-default-color);
 }
 
 /* The only way to handle if input field is not empty - detect by :placeholder-shown :(( */
@@ -29,9 +37,12 @@
     color: transparent;
 }
 
+.material-form-group input:focus + label {
+    color: var(--mi-label-focus-color);
+}
+
 .material-form-group input:focus + label,
 .material-form-group label {
-    color: #439ADC;
     top: -100%;
     transform: scale(0.8, 0.8) translateY(100%);
     background: #fff;
