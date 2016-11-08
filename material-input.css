@@ -1,10 +1,13 @@
 /* Additional indent for form-group because label will move up */
 :root {
     --mi-animation-speed: 0.314s;
-    --mi-label-focus-color: #439ADC;
     --mi-label-default-color: rgba(0, 0, 0, 0.314);
     --mi-indent-top: 15px;
     --mi-indent-left:12px;
+
+    --mi-label-focus-color: dodgerblue;
+    --mi-invalid-color: firebrick;
+    --mi-bg-color: white; /* should match parent container color */
 }
 
 .material-form-group {
@@ -45,12 +48,12 @@
 .material-form-group label {
     top: -100%;
     transform: scale(0.8, 0.8) translateY(100%);
-    background: #fff;
+    background: var(--mi-bg-color);
 }
 
 /* Validation Failed */
 .material-form-group input:invalid + label:after {
-    color: red;
+    color: var(--mi-invalid-color);
     content: "(invalid)";
     margin-left: 0.314rem;
 }
